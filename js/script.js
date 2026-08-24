@@ -19,6 +19,118 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ---------- "Hogyan takarítunk?" room tabs + photo hotspots ---------- */
+  var ROOMS = {
+    konyha: {
+      label: 'Konyha',
+      img: 'images/room-kitchen.jpg',
+      alt: 'Konyha takarítás közben',
+      hotspots: [
+        { x: 28, y: 32, caption: 'Páraelszívó eleje, szekrényfrontok letörlése' },
+        { x: 52, y: 62, caption: 'Munkalap fertőtlenítése, tűzhely tisztítása' },
+        { x: 78, y: 45, caption: 'Edények elmosogatása, szemét kivitele' }
+      ]
+    },
+    szobak: {
+      label: 'Szobák',
+      img: 'images/room-bedroom.jpg',
+      alt: 'Hálószoba takarítás közben',
+      hotspots: [
+        { x: 26, y: 28, caption: 'Üvegfelületek, tükrök tisztítása' },
+        { x: 50, y: 68, caption: 'Könnyű tárgyak és alattuk lévő felület, porszívózás/felmosás az ágy alatt' },
+        { x: 74, y: 42, caption: 'Ágy megvetése, felületek rendbetétele, padló porszívózása/felmosása' }
+      ]
+    },
+    furdoszoba: {
+      label: 'Fürdőszoba',
+      img: 'images/room-bathroom.jpg',
+      alt: 'Fürdőszoba takarítás közben',
+      hotspots: [
+        { x: 30, y: 58, caption: 'WC fertőtlenítése, csaptelepek fényesítése' },
+        { x: 58, y: 30, caption: 'Padló porszívózása, felmosása; kád tisztítása' },
+        { x: 80, y: 62, caption: 'Vízkő eltávolítása, mosdókagyló tisztítása' }
+      ]
+    },
+    bejarat: {
+      label: 'Bejárat / Előszoba',
+      img: 'images/placeholder-entry.svg',
+      alt: 'Bejárat / Előszoba takarítás közben',
+      hotspots: [
+        { x: 25, y: 35, caption: 'Bejárati ajtó és tok letörlése' },
+        { x: 55, y: 60, caption: 'Cipők elrendezése, cipőtartó polc letörlése' },
+        { x: 80, y: 40, caption: 'Padló porszívózása, felmosása' }
+      ]
+    }
+  };
+
+  var roomTabs = document.querySelectorAll('.room-tab');
+  var roomImage = document.getElementById('roomImage');
+  var roomHotspots = document.getElementById('roomHotspots');
+
+  function renderHotspots(room) {
+    if (!roomHotspots) return;
+    roomHotspots.innerHTML = '';
+    room.hotspots.forEach(function (spot) {
+      var wrap = document.createElement('div');
+      wrap.className = 'hotspot-wrap';
+      if (spot.x >= 70) wrap.classList.add('align-right');
+      else if (spot.x <= 22) wrap.classList.add('align-left');
+      if (spot.y <= 22) wrap.classList.add('tip-below');
+      wrap.style.left = spot.x + '%';
+      wrap.style.top = spot.y + '%';
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'hotspot-btn';
+      btn.setAttribute('aria-label', spot.caption);
+      btn.setAttribute('aria-expanded', 'false');
+      btn.textContent = '+';
+
+      var tip = document.createElement('div');
+      tip.className = 'hotspot-tip';
+      tip.textContent = spot.caption;
+
+      btn.addEventListener('click', function () {
+        var isOpen = wrap.classList.contains('open');
+        // Close any other open hotspot first
+        roomHotspots.querySelectorAll('.hotspot-wrap.open').forEach(function (openWrap) {
+          openWrap.classList.remove('open');
+          openWrap.querySelector('.hotspot-btn').textContent = '+';
+          openWrap.querySelector('.hotspot-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          wrap.classList.add('open');
+          btn.textContent = '×';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      wrap.appendChild(btn);
+      wrap.appendChild(tip);
+      roomHotspots.appendChild(wrap);
+    });
+  }
+
+  if (roomTabs.length && roomImage) {
+    roomTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var key = tab.getAttribute('data-room');
+        var room = ROOMS[key];
+        if (!room) return;
+        roomTabs.forEach(function (t) {
+          var active = t === tab;
+          t.classList.toggle('active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        roomImage.src = room.img;
+        roomImage.alt = room.alt;
+        renderHotspots(room);
+      });
+    });
+    // Initial render for the default active tab
+    renderHotspots(ROOMS.konyha);
+  }
+
   /* ---------- Scroll-reveal (IntersectionObserver) ----------
      Variants (data-reveal): up/fade (headings, text), curtain (section
      titles), rise (feature/process/price/team/review cards, auto-

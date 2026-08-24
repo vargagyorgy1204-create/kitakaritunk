@@ -121,55 +121,21 @@
 <section class="process" id="hogyan-takaritunk">
   <div class="container">
     <h2 data-reveal="curtain">Hogyan takarítunk?</h2>
-    <p class="section-subtitle" data-reveal="up" data-delay="100">Minden helyiséget részletes, ellenőrzött lista alapján takarítunk ki.</p>
+    <p class="section-subtitle" data-reveal="up" data-delay="100">Válasszon helyiséget, és nézze meg pontosan, mire figyelünk takarítás közben.</p>
 
-    <div class="process-grid">
-      <article class="process-card" data-reveal="rise">
-        <div class="process-img"><img src="images/room-kitchen.jpg" alt="Konyha takarítás közben" loading="lazy"></div>
-        <h3>Konyha</h3>
-        <ul>
-          <li>Páraelszívó eleje</li>
-          <li>Szekrényfrontok letörlése</li>
-          <li>Munkalap fertőtlenítése</li>
-          <li>Tűzhely tisztítása</li>
-          <li>Edények elmosogatása</li>
-          <li>Szemét kivitele</li>
-        </ul>
-      </article>
-      <article class="process-card" data-reveal="rise">
-        <div class="process-img"><img src="images/room-bedroom.jpg" alt="Hálószoba takarítás közben" loading="lazy"></div>
-        <h3>Szobák</h3>
-        <ul>
-          <li>Üvegfelületek, tükrök tisztítása</li>
-          <li>Könnyű tárgyak és alattuk lévő felület</li>
-          <li>Porszívózás/felmosás az ágy alatt</li>
-          <li>Ágy megvetése</li>
-          <li>Felületek rendbetétele</li>
-          <li>Padló porszívózása, felmosása</li>
-        </ul>
-      </article>
-      <article class="process-card" data-reveal="rise">
-        <div class="process-img"><img src="images/room-bathroom.jpg" alt="Fürdőszoba takarítás közben" loading="lazy"></div>
-        <h3>Fürdőszoba</h3>
-        <ul>
-          <li>WC fertőtlenítése</li>
-          <li>Csaptelepek fényesítése</li>
-          <li>Padló porszívózása, felmosása</li>
-          <li>Kád tisztítása</li>
-          <li>Vízkő eltávolítása</li>
-          <li>Mosdókagyló tisztítása</li>
-        </ul>
-      </article>
-      <article class="process-card" data-reveal="rise">
-        <div class="process-img placeholder-img" data-label="Bejárat / Előszoba"></div>
-        <h3>Bejárat / Előszoba</h3>
-        <ul>
-          <li>Bejárati ajtó és tok letörlése</li>
-          <li>Cipők elrendezése</li>
-          <li>Cipőtartó polc letörlése</li>
-          <li>Padló porszívózása, felmosása</li>
-        </ul>
-      </article>
+    <div class="room-tabs" role="tablist" aria-label="Helyiség kiválasztása" data-reveal="up" data-delay="150">
+      <button type="button" class="room-tab active" data-room="konyha" role="tab" aria-selected="true">Konyha</button>
+      <button type="button" class="room-tab" data-room="szobak" role="tab" aria-selected="false">Szobák</button>
+      <button type="button" class="room-tab" data-room="furdoszoba" role="tab" aria-selected="false">Fürdőszoba</button>
+      <button type="button" class="room-tab" data-room="bejarat" role="tab" aria-selected="false">Bejárat / Előszoba</button>
+    </div>
+
+    <div class="room-photo-wrap" data-reveal="rise">
+      <div class="room-photo">
+        <img id="roomImage" src="images/room-kitchen.jpg" alt="Konyha takarítás közben">
+        <div class="hotspots" id="roomHotspots"></div>
+        <a href="#arak" class="hero-badge room-badge">Takarítást rendelek</a>
+      </div>
     </div>
   </div>
 </section>
