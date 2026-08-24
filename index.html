@@ -71,7 +71,6 @@
         <h1 data-reveal="up" data-delay="0">Kitakarítunk az <span class="accent-light">otthonában</span></h1>
         <p class="hero-subtitle" data-reveal="up" data-delay="100">A legjobban értékelt takarítási cég Budapesten</p>
         <div class="hero-actions" data-reveal="up" data-delay="200">
-          <button type="button" class="cta-btn cta-large">Takarítást rendelek</button>
           <div class="hero-rating">
             <span class="stars">★★★★★</span>
             <span>4,92 / 5 · 1015 vélemény</span>
@@ -199,40 +198,62 @@
   </div>
 </section>
 
-<!-- ===================== TEAM CAROUSEL ===================== -->
+<!-- ===================== TEAM ===================== -->
 <section class="team" id="csapat">
-  <div class="container">
-    <h2 data-reveal="curtain">Ismerje meg takarítóinkat</h2>
-    <div class="team-carousel">
-      <div class="team-track">
-        <article class="team-card" data-reveal="rise">
-          <img src="images/team-1.jpg" alt="Farkas Ildikó" loading="lazy">
-          <h3>Farkas Ildikó</h3>
-          <span class="stars small">★★★★★ 4,9</span>
-          <p>Pedagógiai végzettséggel rendelkezik, korábban óvodapedagógusként dolgozott.</p>
-        </article>
-        <article class="team-card" data-reveal="rise">
-          <img src="images/team-2.jpg" alt="Balogh Zsófia" loading="lazy">
-          <h3>Balogh Zsófia</h3>
-          <span class="stars small">★★★★★ 4,9</span>
-          <p>Nagyon pontos és aktív, szereti a gyerekeket, korábban ápolóként dolgozott.</p>
-        </article>
-        <article class="team-card" data-reveal="rise">
-          <img src="images/team-3.jpg" alt="Németh Petra" loading="lazy">
-          <h3>Németh Petra</h3>
-          <span class="stars small">★★★★★ 4,9</span>
-          <p>Nagyon szereti az állatokat, korábban adminisztratív területen dolgozott.</p>
-        </article>
-        <article class="team-card" data-reveal="rise">
-          <img src="images/team-4.jpg" alt="Varga Csilla" loading="lazy">
-          <h3>Varga Csilla</h3>
-          <span class="stars small">★★★★★ 4,9</span>
-          <p>Nagyon szereti a gyerekeket, saját kisfia van, barátnője ajánlására csatlakozott hozzánk.</p>
-        </article>
-      </div>
-      <div class="carousel-dots" role="tablist" aria-label="Csapattagok"></div>
+  <div class="container team-inner">
+    <div class="team-text">
+      <h2 data-reveal="curtain">Ismerje meg takarítóinkat</h2>
+      <p data-reveal="up" data-delay="100">Minden takarítónk alapos kiválasztáson és képzésen esett át. Kattintson egy fotóra, és ismerje meg közelebbről is őket.</p>
+      <a href="mailto:allas@kitakaritunk.hu?subject=Jelentkez%C3%A9s%20takar%C3%ADt%C3%B3k%C3%A9nt" class="icon-link" data-reveal="up" data-delay="180">
+        <span class="icon-link-circle" aria-hidden="true">→</span>
+        <span class="icon-link-label">Csatlakoznék takarítóként</span>
+      </a>
     </div>
-    <a href="mailto:allas@kitakaritunk.hu?subject=Jelentkez%C3%A9s%20takar%C3%ADt%C3%B3k%C3%A9nt" class="more-link">Csatlakoznék takarítóként <span class="arrow">→</span></a>
+    <div class="team-grid-wrap" data-reveal="rise">
+      <div class="team-grid">
+        <button type="button" class="team-tile" aria-expanded="false">
+          <img src="images/team-1.jpg" alt="Farkas Ildikó" loading="lazy">
+          <span class="team-tile-purple" aria-hidden="true"></span>
+          <span class="team-tile-content">
+            <span class="team-tile-name">Farkas Ildikó</span>
+            <span class="stars small">★★★★★ 4,9</span>
+            <span class="team-tile-bio">Pedagógiai végzettséggel rendelkezik, korábban óvodapedagógusként dolgozott.</span>
+          </span>
+          <span class="team-tile-toggle" aria-hidden="true">+</span>
+        </button>
+        <button type="button" class="team-tile" aria-expanded="false">
+          <img src="images/team-2.jpg" alt="Balogh Zsófia" loading="lazy">
+          <span class="team-tile-purple" aria-hidden="true"></span>
+          <span class="team-tile-content">
+            <span class="team-tile-name">Balogh Zsófia</span>
+            <span class="stars small">★★★★★ 4,9</span>
+            <span class="team-tile-bio">Nagyon pontos és aktív, szereti a gyerekeket, korábban ápolóként dolgozott.</span>
+          </span>
+          <span class="team-tile-toggle" aria-hidden="true">+</span>
+        </button>
+        <button type="button" class="team-tile" aria-expanded="false">
+          <img src="images/team-3.jpg" alt="Németh Petra" loading="lazy">
+          <span class="team-tile-purple" aria-hidden="true"></span>
+          <span class="team-tile-content">
+            <span class="team-tile-name">Németh Petra</span>
+            <span class="stars small">★★★★★ 4,9</span>
+            <span class="team-tile-bio">Nagyon szereti az állatokat, korábban adminisztratív területen dolgozott.</span>
+          </span>
+          <span class="team-tile-toggle" aria-hidden="true">+</span>
+        </button>
+        <button type="button" class="team-tile" aria-expanded="false">
+          <img src="images/team-4.jpg" alt="Varga Csilla" loading="lazy">
+          <span class="team-tile-purple" aria-hidden="true"></span>
+          <span class="team-tile-content">
+            <span class="team-tile-name">Varga Csilla</span>
+            <span class="stars small">★★★★★ 4,9</span>
+            <span class="team-tile-bio">Nagyon szereti a gyerekeket, saját kisfia van, barátnője ajánlására csatlakozott hozzánk.</span>
+          </span>
+          <span class="team-tile-toggle" aria-hidden="true">+</span>
+        </button>
+      </div>
+      <a href="#arak" class="hero-badge team-badge">Takarítást rendelek</a>
+    </div>
   </div>
 </section>
 

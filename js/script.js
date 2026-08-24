@@ -227,50 +227,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* ---------- Team carousel ---------- */
-  var track = document.querySelector('.team-track');
-  var dotsWrap = document.querySelector('.carousel-dots');
-  if (track && dotsWrap) {
-    var cards = track.children.length;
-    var perView = window.innerWidth <= 720 ? 1 : window.innerWidth <= 1080 ? 2 : 4;
-    var pages = Math.max(1, cards - perView + 1);
-    var current = 0;
-
-    function renderDots() {
-      dotsWrap.innerHTML = '';
-      for (var i = 0; i < pages; i++) {
-        var dot = document.createElement('button');
-        dot.type = 'button';
-        dot.setAttribute('aria-label', 'Csoport ' + (i + 1));
-        if (i === current) dot.classList.add('active');
-        (function (idx) {
-          dot.addEventListener('click', function () { goTo(idx); });
-        })(i);
-        dotsWrap.appendChild(dot);
-      }
-    }
-
-    function goTo(idx) {
-      current = idx;
-      var cardWidth = track.children[0].getBoundingClientRect().width;
-      var gap = 24;
-      track.style.transform = 'translateX(-' + (idx * (cardWidth + gap)) + 'px)';
-      dotsWrap.querySelectorAll('button').forEach(function (d, i) {
-        d.classList.toggle('active', i === current);
+  /* ---------- Team tiles (2x2 grid, click-to-expand bio) ---------- */
+  document.querySelectorAll('.team-tile').forEach(function (tile) {
+    var toggle = tile.querySelector('.team-tile-toggle');
+    tile.addEventListener('click', function () {
+      var isOpen = tile.classList.contains('is-expanded');
+      document.querySelectorAll('.team-tile.is-expanded').forEach(function (open) {
+        if (open !== tile) {
+          open.classList.remove('is-expanded');
+          open.setAttribute('aria-expanded', 'false');
+          open.querySelector('.team-tile-toggle').textContent = '+';
+        }
       });
-    }
-
-    function recalc() {
-      perView = window.innerWidth <= 720 ? 1 : window.innerWidth <= 1080 ? 2 : 4;
-      pages = Math.max(1, cards - perView + 1);
-      current = Math.min(current, pages - 1);
-      renderDots();
-      goTo(current);
-    }
-
-    renderDots();
-    window.addEventListener('resize', recalc);
-  }
+      tile.classList.toggle('is-expanded', !isOpen);
+      tile.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
+      if (toggle) toggle.textContent = !isOpen ? '×' : '+';
+    });
+  });
 
   /* ---------- Animated stat counter ---------- */
   var counterEl = document.querySelector('.counter');
