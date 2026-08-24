@@ -862,12 +862,6 @@ h2 {
 .price-table th { color: var(--text-light); font-weight: 500; }
 .price-table td:last-child, .price-table th:last-child { text-align: right; color: var(--accent); font-weight: 500; }
 
-/* ===================== PRICE FACTORS ===================== */
-.factor-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
-.factor-list li { font-size: 16px; color: var(--text-light); padding-left: 4px; }
-.factor-list li strong { color: var(--text); font-weight: 500; }
-.price-factors h2 { text-align: center; margin-bottom: 32px; }
-
 /* ===================== SERVICE TYPES ===================== */
 .service-types h2 { text-align: center; margin-bottom: 48px; }
 .service-grid {
@@ -877,37 +871,6 @@ h2 {
 }
 .service-item h3 { font-size: 17px; margin-bottom: 10px; }
 .service-item p { color: var(--text-light); font-size: 14.5px; }
-
-/* ===================== WHY TRUST ===================== */
-.why-trust { background: #FBFAFF; }
-.why-trust h2 { text-align: center; margin-bottom: 48px; }
-.trust-points {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-}
-.trust-point { text-align: center; }
-.trust-num { display: block; font-size: 34px; color: var(--accent-soft); font-weight: 600; margin-bottom: 8px; -webkit-text-stroke: 1px var(--accent); }
-.trust-point p { color: var(--text-light); font-size: 14.5px; }
-
-/* ===================== ADDITIONAL COSTS ===================== */
-.additional-costs { text-align: center; }
-.additional-costs h2 { margin-bottom: 32px; }
-.addon-cards {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-.addon-card {
-  background: #FBFAFF;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  padding: 14px 28px;
-  font-size: 15px;
-}
-.addon-card:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ===================== SAFETY ===================== */
 .safety { max-width: 900px; margin: 0 auto; text-align: center; }
@@ -978,7 +941,6 @@ h2 {
   .reviews-grid { grid-template-columns: repeat(2, 1fr); }
   .price-tables { grid-template-columns: 1fr; }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
-  .trust-points { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -992,7 +954,7 @@ h2 {
   .hero-text h1 { font-size: 40px; }
   .hero-image img { min-height: 320px; max-height: 420px; border-radius: 0 0 24px 24px; }
   .hero-badge { width: 100px; height: 100px; font-size: 11px; right: 16px; bottom: -24px; }
-  .features-grid, .price-cards, .reviews-grid, .service-grid, .trust-points { grid-template-columns: 1fr; }
+  .features-grid, .price-cards, .reviews-grid, .service-grid { grid-template-columns: 1fr; }
   .team-inner { grid-template-columns: 1fr; gap: 32px; }
   .team-badge.hero-badge { left: 16px; bottom: -20px; width: 90px; height: 90px; font-size: 11px; }
   .protection-inner { grid-template-columns: 1fr; }
