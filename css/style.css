@@ -301,12 +301,18 @@ h2 {
 .mobile-pill { align-self: flex-start; }
 
 /* ===================== HERO ===================== */
-.hero { padding: 72px 0 96px; }
+.hero { padding: 48px 0 96px; overflow: hidden; }
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
+  gap: 0 48px;
+  max-width: 1760px;
+  margin: 0 auto;
+}
+.hero-text-wrap {
+  padding: 0 32px;
+  padding-left: 0;
 }
 .hero-text h1 {
   font-size: 72px;
@@ -326,11 +332,46 @@ h2 {
 .stars { color: var(--accent); letter-spacing: 2px; }
 .stars.small { font-size: 13px; }
 
+/* Full-bleed hero photo — flush to the browser's left edge, no radius */
+.hero-image {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+}
 .hero-image img {
   width: 100%;
-  border-radius: 28px;
-  aspect-ratio: 4/3.2;
+  height: 100%;
+  min-height: 460px;
+  max-height: 640px;
+  border-radius: 0;
   object-fit: cover;
+}
+
+/* Rotated circular badge overlapping the photo's bottom-right corner */
+.hero-badge {
+  position: absolute;
+  right: -30px;
+  bottom: -30px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 18px;
+  transform: rotate(-22deg);
+  box-shadow: var(--shadow-hover);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.hero-badge:hover,
+.hero-badge:focus-visible {
+  transform: rotate(-22deg) scale(1.06);
 }
 
 /* ===================== TRUST FEATURES ===================== */
@@ -773,10 +814,12 @@ h2 {
   section { padding: 64px 0; }
   .container { padding: 0 20px; }
   h2 { font-size: 30px; }
-  .hero { padding: 40px 0 64px; }
-  .hero-inner { grid-template-columns: 1fr; }
+  .hero { padding: 0 0 64px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero-text-wrap { padding: 0 20px; }
   .hero-text h1 { font-size: 40px; }
-  .hero-image { order: -1; }
+  .hero-image img { min-height: 320px; max-height: 420px; border-radius: 0 0 24px 24px; }
+  .hero-badge { width: 100px; height: 100px; font-size: 11px; right: 16px; bottom: -24px; }
   .features-grid, .process-grid, .price-cards, .team-track, .reviews-grid, .service-grid, .trust-points { grid-template-columns: 1fr; }
   .protection-inner { grid-template-columns: 1fr; }
   .protection-images { order: -1; }
