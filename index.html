@@ -23,14 +23,13 @@
       <button type="button" class="pill-btn" data-mode="iroda" role="tab" aria-selected="false">Iroda</button>
     </div>
 
-    <span class="location-badge">📍 Budapest</span>
-
     <div class="header-right">
       <a href="tel:+36301234567" class="phone-block">
         <span class="phone-number">+36 30 123 4567</span>
-        <span class="badge-247">0-24</span>
       </a>
-      <button type="button" class="cta-btn header-cta">Takarítást rendelek</button>
+      <button type="button" class="hamburger-toggle" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="sidePanel">
+        <span></span><span></span><span></span>
+      </button>
       <button type="button" class="hamburger" aria-label="Menü megnyitása" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -60,6 +59,17 @@
     <a href="tel:+36301234567" class="phone-number">+36 30 123 4567 · 0-24</a>
     <button type="button" class="cta-btn">Takarítást rendelek</button>
   </div>
+
+  <div class="side-panel-backdrop" id="sidePanelBackdrop"></div>
+  <aside class="side-panel" id="sidePanel" aria-hidden="true">
+    <button type="button" class="side-panel-close" aria-label="Menü bezárása">×</button>
+    <nav class="side-panel-nav" aria-label="Gyors navigáció">
+      <a href="#szolgaltatasaink" class="side-panel-featured">→ Szolgáltatások</a>
+      <a href="#arak">Árak</a>
+      <a href="#velemenyek">Vélemények</a>
+      <a href="#gyik">GYIK</a>
+    </nav>
+  </aside>
 </header>
 
 <!-- ===================== HERO ===================== -->

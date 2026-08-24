@@ -19,6 +19,40 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ---------- Side panel (slide-in menu, desktop hamburger) ---------- */
+  var hamburgerToggle = document.querySelector('.hamburger-toggle');
+  var sidePanel = document.getElementById('sidePanel');
+  var sidePanelBackdrop = document.getElementById('sidePanelBackdrop');
+  var sidePanelClose = document.querySelector('.side-panel-close');
+  if (hamburgerToggle && sidePanel && sidePanelBackdrop) {
+    function openSidePanel() {
+      sidePanel.classList.add('open');
+      sidePanelBackdrop.classList.add('open');
+      hamburgerToggle.classList.add('open');
+      hamburgerToggle.setAttribute('aria-expanded', 'true');
+      sidePanel.setAttribute('aria-hidden', 'false');
+    }
+    function closeSidePanel() {
+      sidePanel.classList.remove('open');
+      sidePanelBackdrop.classList.remove('open');
+      hamburgerToggle.classList.remove('open');
+      hamburgerToggle.setAttribute('aria-expanded', 'false');
+      sidePanel.setAttribute('aria-hidden', 'true');
+    }
+    hamburgerToggle.addEventListener('click', function () {
+      if (sidePanel.classList.contains('open')) closeSidePanel();
+      else openSidePanel();
+    });
+    if (sidePanelClose) sidePanelClose.addEventListener('click', closeSidePanel);
+    sidePanelBackdrop.addEventListener('click', closeSidePanel);
+    sidePanel.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeSidePanel);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeSidePanel();
+    });
+  }
+
   /* ---------- "Hogyan takarítunk?" room tabs + photo hotspots ---------- */
   var ROOMS = {
     konyha: {
