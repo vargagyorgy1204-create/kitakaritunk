@@ -300,10 +300,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* ---------- Sticky floating CTA badge (.fab-cta) ----------
    Self-contained: hidden while the hero is in view, appears once the
-   user scrolls past it, and hides again while the pricing section
-   (#arak) is in view (it already has its own CTAs) — reappears once
-   the visitor scrolls past pricing too. Click-to-scroll is handled by
-   the generic .cta-btn handler above; this only toggles visibility.
+   user scrolls past it, and then stays visible for the rest of the
+   page — matching the reference site's floating badge, which stays
+   pinned continuously once it first appears. (An earlier version also
+   hid the badge while the pricing section was in view, but the short
+   gap between hero and pricing made that trigger almost immediately,
+   producing a jarring appear→disappear→reappear flicker.)
 
    Uses getBoundingClientRect() on scroll/resize (rAF-throttled) rather
    than IntersectionObserver: a boundary case where a section's edge
@@ -313,22 +315,14 @@ document.addEventListener('DOMContentLoaded', function () {
 (function () {
   var fab = document.querySelector('.fab-cta');
   var hero = document.querySelector('.hero');
-  var pricing = document.getElementById('arak');
   if (!fab || !hero) return;
 
   var ticking = false;
 
   function update() {
     ticking = false;
-    // Small tolerance: sub-pixel layout rounding can leave bottom at e.g.
-    // 0.4px right at the transition point instead of exactly 0 or less.
-    var pastHero = hero.getBoundingClientRect().bottom <= 4;
-    var inPricing = false;
-    if (pricing) {
-      var r = pricing.getBoundingClientRect();
-      inPricing = r.top < window.innerHeight && r.bottom > 0;
-    }
-    fab.classList.toggle('fab-cta--visible', pastHero && !inPricing);
+    var pastHero = hero.getBoundingClientRect().bottom < 4;
+    fab.classList.toggle('fab-cta--visible', pastHero);
   }
 
   function requestUpdate() {
