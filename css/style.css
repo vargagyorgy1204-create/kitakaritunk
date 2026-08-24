@@ -833,7 +833,7 @@ h2 {
 }
 
 /* ===================== STATS STRIP ===================== */
-.stats-strip { background: var(--accent); color: #fff; }
+.stats-strip { background: var(--accent); color: #fff; padding: 48px 0; }
 .stats-inner {
   display: flex;
   align-items: center;
@@ -844,8 +844,32 @@ h2 {
 .stat-counter { display: flex; flex-direction: column; }
 .counter { font-size: 56px; font-weight: 600; line-height: 1; }
 .stat-label { font-size: 15px; opacity: 0.85; margin-top: 8px; }
-.stats-strip blockquote { margin: 0; max-width: 480px; }
-.stats-strip blockquote p { color: #fff; font-size: 18px; font-style: italic; margin-bottom: 10px; }
+
+/* Auto-rotating testimonial carousel — fixed height so slides of
+   different lengths never cause a layout jump when they cross-fade. */
+.testimonial-carousel {
+  position: relative;
+  max-width: 480px;
+  min-height: 112px;
+  flex: 1 1 480px;
+}
+.testimonial-slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+.testimonial-slide.active { opacity: 1; pointer-events: auto; }
+.testimonial-slide p { color: #fff; font-size: 18px; font-style: italic; margin: 0 0 10px; }
+.testimonial-slide cite {
+  display: block;
+  margin-top: 6px;
+  font-style: normal;
+  font-size: 14px;
+  opacity: 0.85;
+}
 .stats-strip .stars { color: #fff; }
 
 /* ===================== REVIEWS ===================== */

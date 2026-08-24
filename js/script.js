@@ -279,6 +279,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* ---------- Auto-rotating testimonial carousel (stats strip) ---------- */
+  var testimonialSlides = document.querySelectorAll('.testimonial-slide');
+  if (testimonialSlides.length > 1) {
+    var activeSlide = 0;
+    setInterval(function () {
+      testimonialSlides[activeSlide].classList.remove('active');
+      activeSlide = (activeSlide + 1) % testimonialSlides.length;
+      testimonialSlides[activeSlide].classList.add('active');
+    }, 4500);
+  }
+
   /* ---------- Animated stat counter ---------- */
   var counterEl = document.querySelector('.counter');
   if (counterEl) {
