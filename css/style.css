@@ -207,13 +207,6 @@ h2 {
 }
 .logo .dot { color: var(--accent); }
 
-.location-badge {
-  font-size: 14px;
-  color: var(--text-light);
-  flex-shrink: 0;
-  white-space: nowrap;
-}
-
 .main-nav {
   display: flex;
   align-items: center;
@@ -243,14 +236,6 @@ h2 {
   gap: 8px;
 }
 .phone-number { font-size: 14px; font-weight: 500; white-space: nowrap; }
-.badge-247 {
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: var(--radius-pill);
-}
 
 .hamburger {
   display: none;
@@ -911,7 +896,6 @@ h2 {
   .header-row--nav { display: none; }
   .header-right .cta-btn.header-cta { display: none; }
   .hamburger { display: flex; }
-  .location-badge { display: none; }
   .toggle-pill:not(.mobile-pill):not(.pricing-toggle) { display: none; }
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .price-cards { grid-template-columns: repeat(2, 1fr); }
