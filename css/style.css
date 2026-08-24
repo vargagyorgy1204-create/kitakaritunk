@@ -217,6 +217,7 @@ h2 {
 .main-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 28px;
   width: 100%;
   flex-wrap: nowrap;
