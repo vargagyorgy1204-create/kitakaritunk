@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kitakarítunk. — Takarítási szolgáltatás Budapesten</title>
+<meta name="description" content="kitakarítunk. — Budapest legjobban értékelt takarítási cége. Otthon és iroda takarítás, nagytakarítás, felújítás utáni takarítás, ablaktisztítás. 0-24 rendelkezésre állás.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧼</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="logo">kitakarítunk<span class="dot">.</span></a>
+
+    <div class="toggle-pill" role="tablist" aria-label="Szolgáltatás típusa">
+      <button type="button" class="pill-btn active" data-mode="otthon" role="tab" aria-selected="true">Otthon</button>
+      <button type="button" class="pill-btn" data-mode="iroda" role="tab" aria-selected="false">Iroda</button>
+    </div>
+
+    <span class="location-badge">📍 Budapest</span>
+
+    <nav class="main-nav" aria-label="Szolgáltatások">
+      <a href="#hogyan-takaritunk">Felújítás utáni takarítás</a>
+      <a href="#seo-content">Nagytakarítás</a>
+      <a href="#arak">Fenntartó takarítás</a>
+      <a href="#seo-content">Vegytisztítás</a>
+      <a href="#seo-content">Ablaktisztítás</a>
+    </nav>
+
+    <div class="header-right">
+      <a href="tel:+36301234567" class="phone-block">
+        <span class="phone-number">+36 30 123 4567</span>
+        <span class="badge-247">0-24</span>
+      </a>
+      <button type="button" class="cta-btn header-cta">Takarítást rendelek</button>
+      <button type="button" class="hamburger" aria-label="Menü megnyitása" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav">
+    <div class="toggle-pill mobile-pill">
+      <button type="button" class="pill-btn active" data-mode="otthon">Otthon</button>
+      <button type="button" class="pill-btn" data-mode="iroda">Iroda</button>
+    </div>
+    <a href="#hogyan-takaritunk">Felújítás utáni takarítás</a>
+    <a href="#seo-content">Nagytakarítás</a>
+    <a href="#arak">Fenntartó takarítás</a>
+    <a href="#seo-content">Vegytisztítás</a>
+    <a href="#seo-content">Ablaktisztítás</a>
+    <a href="tel:+36301234567" class="phone-number">+36 30 123 4567 · 0-24</a>
+    <button type="button" class="cta-btn">Takarítást rendelek</button>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>Kitakarítunk az <span class="accent-light">otthonában</span></h1>
+      <p class="hero-subtitle">A legjobban értékelt takarítási cég Budapesten</p>
+      <div class="hero-actions">
+        <button type="button" class="cta-btn cta-large">Takarítást rendelek</button>
+        <div class="hero-rating">
+          <span class="stars">★★★★★</span>
+          <span>4,92 / 5 · 1015 vélemény</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="images/hero-cleaners.jpg" alt="Takarító szakember munka közben egy világos budapesti otthonban" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST FEATURES ===================== -->
+<section class="trust-features" id="miert-mi">
+  <div class="container">
+    <div class="features-grid">
+      <article class="feature-card">
+        <div class="feature-img"><img src="images/feature-vetted.jpg" alt="Kézfogás egy interjú után" loading="lazy"></div>
+        <h3>Alaposan ellenőrzött szakemberek</h3>
+        <p>Minden jelentkező személyes interjún és képzésen vesz részt, mielőtt önállóan takarítást vállalhatna nálunk.</p>
+        <button type="button" class="more-link">Bővebben →</button>
+      </article>
+      <article class="feature-card">
+        <div class="feature-img"><img src="images/feature-products.jpg" alt="Környezetbarát tisztítószer" loading="lazy"></div>
+        <h3>Minőségi környezetbarát vegyszer</h3>
+        <p>Kizárólag prémium, kímélő és kellemes illatú, német minőségű tisztítószereket használunk minden munkánál.</p>
+        <button type="button" class="more-link">Bővebben →</button>
+      </article>
+      <article class="feature-card">
+        <div class="feature-img"><img src="images/feature-quality.jpg" alt="Minőségellenőrzés szimbóluma" loading="lazy"></div>
+        <h3>Minőségellenőrzés</h3>
+        <p>Minden takarítás után visszajelzést kérünk, 1-5-ig értékelheti a munkát. Ha valami nem tökéletes, ingyen újra elvégezzük.</p>
+        <button type="button" class="more-link">Bővebben →</button>
+      </article>
+      <article class="feature-card">
+        <div class="feature-img"><img src="images/feature-247.jpg" alt="Óra, ami a 0-24 órás elérhetőséget jelképezi" loading="lazy"></div>
+        <h3>0-24 non-stop rendelkezésre állás</h3>
+        <p>Akár hajnali 3-kor is rendelhet takarítást — szakemberünk már reggelre az otthonában lesz.</p>
+        <button type="button" class="more-link">Bővebben →</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOGYAN TAKARÍTUNK ===================== -->
+<section class="process" id="hogyan-takaritunk">
+  <div class="container">
+    <h2>Hogyan takarítunk?</h2>
+    <p class="section-subtitle">Minden helyiséget részletes, ellenőrzött lista alapján takarítunk ki.</p>
+
+    <div class="process-grid">
+      <article class="process-card">
+        <div class="process-img"><img src="images/room-kitchen.jpg" alt="Konyha takarítás közben" loading="lazy"></div>
+        <h3>Konyha</h3>
+        <ul>
+          <li>Páraelszívó eleje</li>
+          <li>Szekrényfrontok letörlése</li>
+          <li>Munkalap fertőtlenítése</li>
+          <li>Tűzhely tisztítása</li>
+          <li>Edények elmosogatása</li>
+          <li>Szemét kivitele</li>
+        </ul>
+      </article>
+      <article class="process-card">
+        <div class="process-img"><img src="images/room-bedroom.jpg" alt="Hálószoba takarítás közben" loading="lazy"></div>
+        <h3>Szobák</h3>
+        <ul>
+          <li>Üvegfelületek, tükrök tisztítása</li>
+          <li>Könnyű tárgyak és alattuk lévő felület</li>
+          <li>Porszívózás/felmosás az ágy alatt</li>
+          <li>Ágy megvetése</li>
+          <li>Felületek rendbetétele</li>
+          <li>Padló porszívózása, felmosása</li>
+        </ul>
+      </article>
+      <article class="process-card">
+        <div class="process-img"><img src="images/room-bathroom.jpg" alt="Fürdőszoba takarítás közben" loading="lazy"></div>
+        <h3>Fürdőszoba</h3>
+        <ul>
+          <li>WC fertőtlenítése</li>
+          <li>Csaptelepek fényesítése</li>
+          <li>Padló porszívózása, felmosása</li>
+          <li>Kád tisztítása</li>
+          <li>Vízkő eltávolítása</li>
+          <li>Mosdókagyló tisztítása</li>
+        </ul>
+      </article>
+      <article class="process-card">
+        <div class="process-img placeholder-img" data-label="Bejárat / Előszoba"></div>
+        <h3>Bejárat / Előszoba</h3>
+        <ul>
+          <li>Bejárati ajtó és tok letörlése</li>
+          <li>Cipők elrendezése</li>
+          <li>Cipőtartó polc letörlése</li>
+          <li>Padló porszívózása, felmosása</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section class="pricing" id="arak">
+  <div class="container">
+    <h2>Átlátható és egyértelmű árak</h2>
+
+    <div class="toggle-pill pricing-toggle" role="tablist" aria-label="Fizetési mód">
+      <button type="button" class="pill-btn" data-billing="subscription">Előfizetéssel</button>
+      <button type="button" class="pill-btn active" data-billing="onetime">Egyszeri takarítás</button>
+    </div>
+
+    <div class="price-cards">
+      <article class="price-card">
+        <h3>1 szobás</h3>
+        <p class="price" data-onetime="15 000 Ft" data-subscription="12 500 Ft">15 000 Ft</p>
+        <p class="duration">~2 óra</p>
+        <button type="button" class="cta-btn cta-outline">Rendelem</button>
+      </article>
+      <article class="price-card">
+        <h3>2 szobás</h3>
+        <p class="price" data-onetime="20 000 Ft" data-subscription="17 000 Ft">20 000 Ft</p>
+        <p class="duration">~3 óra</p>
+        <button type="button" class="cta-btn cta-outline">Rendelem</button>
+      </article>
+      <article class="price-card featured">
+        <span class="price-badge">Legnépszerűbb</span>
+        <h3>3 szobás</h3>
+        <p class="price" data-onetime="26 000 Ft" data-subscription="22 000 Ft">26 000 Ft</p>
+        <p class="duration">~5 óra</p>
+        <button type="button" class="cta-btn">Rendelem</button>
+      </article>
+      <article class="price-card">
+        <h3>4 szobás</h3>
+        <p class="price" data-onetime="32 000 Ft" data-subscription="27 500 Ft">32 000 Ft</p>
+        <p class="duration">~6 óra</p>
+        <button type="button" class="cta-btn cta-outline">Rendelem</button>
+      </article>
+    </div>
+
+    <button type="button" class="more-link discount-link">Hogyan kapok kedvezményt? →</button>
+  </div>
+</section>
+
+<!-- ===================== QUALITY CONTROL ===================== -->
+<section class="quality" id="minoseg">
+  <div class="container quality-inner">
+    <div>
+      <h2>Minőséget garantálunk</h2>
+      <p>Minden takarítás után visszajelzést kérünk ügyfeleinktől, és 1-5 csillagig értékelhetik a munkát. Ha bármi nem felel meg az elvárásainak, ingyenesen újra elvégezzük a takarítást — ez a minőségbiztosítási rendszerünk alapja.</p>
+      <a href="#" class="more-link">Részletek a minőségbiztosításról →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEAM CAROUSEL ===================== -->
+<section class="team" id="csapat">
+  <div class="container">
+    <h2>Ismerje meg takarítóinkat</h2>
+    <div class="team-carousel">
+      <div class="team-track">
+        <article class="team-card">
+          <img src="images/team-1.jpg" alt="Farkas Ildikó" loading="lazy">
+          <h3>Farkas Ildikó</h3>
+          <span class="stars small">★★★★★ 4,9</span>
+          <p>Pedagógiai végzettséggel rendelkezik, korábban óvodapedagógusként dolgozott.</p>
+        </article>
+        <article class="team-card">
+          <img src="images/team-2.jpg" alt="Balogh Zsófia" loading="lazy">
+          <h3>Balogh Zsófia</h3>
+          <span class="stars small">★★★★★ 4,9</span>
+          <p>Nagyon pontos és aktív, szereti a gyerekeket, korábban ápolóként dolgozott.</p>
+        </article>
+        <article class="team-card">
+          <img src="images/team-3.jpg" alt="Németh Petra" loading="lazy">
+          <h3>Németh Petra</h3>
+          <span class="stars small">★★★★★ 4,9</span>
+          <p>Nagyon szereti az állatokat, korábban adminisztratív területen dolgozott.</p>
+        </article>
+        <article class="team-card">
+          <img src="images/team-4.jpg" alt="Varga Csilla" loading="lazy">
+          <h3>Varga Csilla</h3>
+          <span class="stars small">★★★★★ 4,9</span>
+          <p>Nagyon szereti a gyerekeket, saját kisfia van, barátnője ajánlására csatlakozott hozzánk.</p>
+        </article>
+      </div>
+      <div class="carousel-dots" role="tablist" aria-label="Csapattagok"></div>
+    </div>
+    <a href="#" class="more-link">Csatlakoznék takarítóként →</a>
+  </div>
+</section>
+
+<!-- ===================== STATS STRIP ===================== -->
+<section class="stats-strip">
+  <div class="container stats-inner">
+    <div class="stat-counter">
+      <span class="counter" data-target="1234">0</span>
+      <span class="stat-label">Ma teljesített megrendelés</span>
+    </div>
+    <blockquote>
+      <p>„Végre egy takarítócég, amire tényleg lehet számítani. Percre pontosan érkeztek, és a lakás ragyogott.”</p>
+      <span class="stars">★★★★★</span>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="reviews" id="velemenyek">
+  <div class="container">
+    <h2>Átlagos értékelésünk 4,92 az 5-ből</h2>
+    <p class="section-subtitle">Összesen 1015 vélemény budapesti lakástakarításról</p>
+
+    <div class="reviews-grid">
+      <article class="review-card">
+        <div class="review-head">
+          <img src="images/testimonial-1.jpg" alt="Marina" loading="lazy">
+          <div><strong>Marina</strong><span>projektvezető</span></div>
+        </div>
+        <span class="stars small">★★★★★</span>
+        <p>„A takarító pontosan érkezett, és minden apró részletre figyelt. Azóta rendszeresen rendelünk.”</p>
+      </article>
+      <article class="review-card">
+        <div class="review-head">
+          <img src="images/testimonial-2.jpg" alt="Karina" loading="lazy">
+          <div><strong>Karina</strong><span>Recruitment Consultant</span></div>
+        </div>
+        <span class="stars small">★★★★★</span>
+        <p>„Nagyon rugalmasak voltak az időpontegyeztetésnél, és a lakás illata is fantasztikus lett.”</p>
+      </article>
+      <article class="review-card">
+        <div class="review-head">
+          <img src="images/testimonial-3.jpg" alt="Jenő" loading="lazy">
+          <div><strong>Jenő</strong><span>Managing Partner</span></div>
+        </div>
+        <span class="stars small">★★★★★</span>
+        <p>„Az irodánkat takarítják hetente, mindig hibátlan munkát végeznek, ajánlom mindenkinek.”</p>
+      </article>
+      <article class="review-card">
+        <div class="review-head">
+          <img src="images/testimonial-4.jpg" alt="Balázs" loading="lazy">
+          <div><strong>Balázs</strong><span>vállalkozó</span></div>
+        </div>
+        <span class="stars small">★★★★★</span>
+        <p>„Felújítás után hívtuk őket, és szó szerint percek alatt eltűnt minden porszemcse.”</p>
+      </article>
+      <article class="review-card">
+        <div class="review-head">
+          <img src="images/testimonial-5.jpg" alt="Zsuzsa" loading="lazy">
+          <div><strong>Zsuzsa</strong><span>anyuka</span></div>
+        </div>
+        <span class="stars small">★★★★★</span>
+        <p>„Két gyerekkel nincs időm takarítani — ők pár óra alatt makulátlanná varázsolják a lakást.”</p>
+      </article>
+      <article class="review-card">
+        <div class="review-head">
+          <img src="images/testimonial-6.jpg" alt="Andrea" loading="lazy">
+          <div><strong>Andrea</strong><span>HR vezető</span></div>
+        </div>
+        <span class="stars small">★★★★★</span>
+        <p>„Az applikációban egy perc alatt lefoglaltam az időpontot, minden gördülékenyen ment.”</p>
+      </article>
+    </div>
+    <a href="#" class="more-link">Több vélemény →</a>
+  </div>
+</section>
+
+<!-- ===================== PROTECTION / GUARANTEE ===================== -->
+<section class="protection" id="biztositas">
+  <div class="container protection-inner">
+    <div class="protection-text">
+      <h2>Biztosított takarítás — kártérítési garanciával</h2>
+      <p>Tudjuk, hogy az otthonába csak megbízható kezekben szeretné engedni az idegeneket. Ezért minden takarítást felelősségbiztosítással fedezünk, és szerződött, ellenőrzött szakemberek végzik a munkát.</p>
+      <ul class="checklist">
+        <li>Minden takarítást felelősségbiztosítás fedez</li>
+        <li>Kár esetén gyors és korrekt kártérítés</li>
+        <li>Megbízható, szerződött szakemberek végzik a munkát</li>
+      </ul>
+    </div>
+    <div class="protection-images">
+      <img src="images/protection-1.jpg" alt="Szerződés aláírása" loading="lazy">
+      <img src="images/protection-2.jpg" alt="Kártérítés kiszámítása" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq" id="gyik">
+  <div class="container">
+    <h2>Gyakori kérdések és válaszok</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">Rendelhető külön ablaktisztítás? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Igen, az ablaktisztítás önálló szolgáltatásként is megrendelhető, négyzetméter alapú árazással.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">Mit NEM vállal egy takarító önállóan? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Egy takarító önállóan nem vállal nehéz bútormozgatást, magas állványzatot igénylő munkát, sem szakipari (pl. villanyszerelési) tevékenységet.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">Mi az előfizetéses takarítás és hogyan működik? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Az előfizetéses takarítás rendszeres, előre ütemezett takarítást jelent (pl. heti vagy kétheti gyakorisággal), kedvezményes áron az egyszeri takarításhoz képest.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">Hogyan válogatjuk a takarítókat? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Minden jelentkező személyes interjún és gyakorlati képzésen vesz részt, referenciáit ellenőrizzük, és csak ezután dolgozhat önállóan ügyfeleinknél.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">Mi van, ha nem vagyok elégedett a takarítással? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Jelezze felénk 24 órán belül, és díjmentesen újra elvégezzük az érintett területek takarítását.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">Mi van, ha valami eltűnik vagy megsérül? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Minden takarítást felelősségbiztosítás fedez, kár esetén gyors és korrekt kártérítési eljárást indítunk.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">Hogyan történik a fizetés? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>A fizetés a takarítás végén, az elvégzett munka ellenőrzése után történik, készpénzzel vagy bankkártyával.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">Lemossák a mennyezetet is? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Az alap takarítás nem tartalmazza a mennyezet lemosását, ez a nagytakarítás és felújítás utáni takarítás része lehet.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">Miért nem része az alap takarításnak az ablak, erkély, hűtő belseje, mikró belseje? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Ezek a feladatok jelentősen több időt és speciális eszközöket igényelnek, ezért külön, kiegészítő szolgáltatásként rendelhetők meg.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">Vállalnak bútor-vegytisztítást? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Igen, kárpitozott bútorok és szőnyegek vegytisztítását is vállaljuk, kültöni időpont-egyeztetés alapján.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">Vállalnak felújítás utáni takarítást? <span class="accordion-icon">+</span></button>
+        <div class="accordion-panel"><p>Igen, a felújítás utáni takarítás egyik fő szolgáltatásunk — a por- és törmelékmentesítéstől az ablaktisztításig mindent elvégzünk.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EXTENDED SEO / PRICING CONTENT ===================== -->
+<section class="seo-content" id="seo-content">
+  <div class="container">
+    <h2>kitakarítunk. — takarítási vállalkozás Budapesten</h2>
+    <p>A kitakarítunk. egy modern háztartási takarítási szolgáltatás, amely leveszi a válláról a takarítás terhét, hogy több ideje maradjon a fontos dolgokra. Alaposan ellenőrzött, képzett szakembereink prémium, környezetbarát vegyszerekkel dolgoznak Budapest és környéke otthonaiban és irodáiban.</p>
+    <p>Legyen szó heti fenntartó takarításról, egyszeri nagytakarításról vagy felújítás utáni portalanításról, csapatunk átlátható árazással és garantált minőséggel áll rendelkezésére — akár még aznap.</p>
+
+    <div class="price-tables">
+      <div class="price-table">
+        <h3>Alap lakás- és háztakarítás árai</h3>
+        <table>
+          <tr><th>Szobaszám</th><th>Ár</th></tr>
+          <tr><td>1 szobás</td><td>20 000 Ft</td></tr>
+          <tr><td>2 szobás</td><td>25 000 Ft</td></tr>
+          <tr><td>3 szobás</td><td>33 000 Ft</td></tr>
+          <tr><td>5 szobás</td><td>38 000 Ft</td></tr>
+        </table>
+      </div>
+      <div class="price-table">
+        <h3>Fenntartó takarítás árai</h3>
+        <table>
+          <tr><th>Szobaszám</th><th>Ár</th></tr>
+          <tr><td>1 szobás</td><td>15 000 Ft</td></tr>
+          <tr><td>2 szobás</td><td>20 000 Ft</td></tr>
+          <tr><td>3 szobás</td><td>26 000 Ft</td></tr>
+          <tr><td>4 szobás</td><td>32 000 Ft</td></tr>
+        </table>
+      </div>
+      <div class="price-table">
+        <h3>Nagytakarítás Budapesten és környékén (Ft/m²)</h3>
+        <table>
+          <tr><th>Típus</th><th>Ár</th></tr>
+          <tr><td>Ház</td><td>900 Ft</td></tr>
+          <tr><td>Nyaraló</td><td>800 Ft</td></tr>
+          <tr><td>Iroda</td><td>800 Ft</td></tr>
+          <tr><td>Ablaktisztítás</td><td>3500–4200 Ft</td></tr>
+          <tr><td>Lakás</td><td>900 Ft</td></tr>
+        </table>
+      </div>
+      <div class="price-table">
+        <h3>Felújítás utáni takarítás (Ft/m²)</h3>
+        <table>
+          <tr><th>Típus</th><th>Ár</th></tr>
+          <tr><td>Ház</td><td>1300 Ft</td></tr>
+          <tr><td>Lakás</td><td>1300 Ft</td></tr>
+          <tr><td>Nyaraló</td><td>1150 Ft</td></tr>
+          <tr><td>Iroda</td><td>1150 Ft</td></tr>
+          <tr><td>Ablaktisztítás</td><td>3500–4200 Ft</td></tr>
+        </table>
+      </div>
+      <div class="price-table">
+        <h3>Kiegészítő szolgáltatások árlistája</h3>
+        <table>
+          <tr><th>Szolgáltatás</th><th>Ár</th></tr>
+          <tr><td>Fürdőszoba takarítás</td><td>3200 Ft</td></tr>
+          <tr><td>Hűtő tisztítás</td><td>3400 Ft</td></tr>
+          <tr><td>Konyhagép tisztítás</td><td>5000 Ft</td></tr>
+          <tr><td>Mosogatás</td><td>5000 Ft</td></tr>
+          <tr><td>Vasalás</td><td>5000 Ft/óra</td></tr>
+          <tr><td>Erkély</td><td>3400 Ft</td></tr>
+          <tr><td>Háziállat alom</td><td>3300 Ft</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MITŐL FÜGG AZ ÁR ===================== -->
+<section class="price-factors" id="mitol-fugg-az-ar">
+  <div class="container">
+    <h2>Mitől függ az ár?</h2>
+    <ul class="factor-list">
+      <li><strong>Alapterület és szobaszám</strong> — nagyobb ingatlan több munkaidőt igényel.</li>
+      <li><strong>A helyiség szennyezettségi foka</strong> — elhanyagoltabb terület alaposabb, hosszabb munkát kíván.</li>
+      <li><strong>A felhasznált vegyszerek választéka</strong> — prémium, allergénmentes szerek felára eltérhet.</li>
+      <li><strong>A takarítás módszere</strong> — száraz, nedves vagy gőzös takarítás más-más időt és eszközt igényel.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== SZOLGÁLTATÁS TÍPUSOK ===================== -->
+<section class="service-types" id="szolgaltatasaink">
+  <div class="container">
+    <h2>Takarítási szolgáltatásaink típusai</h2>
+    <div class="service-grid">
+      <div class="service-item">
+        <h3>Alap takarítás</h3>
+        <p>Rendszeres, gyors felfrissítés a lakás vagy iroda legfontosabb pontjain — a mindennapi tisztaság fenntartására.</p>
+      </div>
+      <div class="service-item">
+        <h3>Fenntartó takarítás</h3>
+        <p>Heti vagy kétheti rendszerességű takarítás, amely megőrzi otthona rendjét folyamatosan.</p>
+      </div>
+      <div class="service-item">
+        <h3>Nagytakarítás</h3>
+        <p>Alapos, mélyreható takarítás minden zugra kiterjedően — évszakváltáskor vagy különleges alkalmak előtt ajánlott.</p>
+      </div>
+      <div class="service-item">
+        <h3>Felújítás utáni takarítás</h3>
+        <p>Por- és törmelékmentesítés festés vagy építkezés után, hogy azonnal birtokba vehesse megújult otthonát.</p>
+      </div>
+      <div class="service-item">
+        <h3>Ablaktisztítás</h3>
+        <p>Csíkmentes, ragyogó ablakok belülről és kívülről, magasban lévő nyílászárókhoz is.</p>
+      </div>
+      <div class="service-item">
+        <h3>Előfizetéses rendszeres takarítás</h3>
+        <p>Fix időpontban érkező, kedvezményes áron elérhető havi vagy heti takarítási csomag.</p>
+      </div>
+      <div class="service-item">
+        <h3>Kiegészítő szolgáltatások</h3>
+        <p>Vasalás, hűtő- és konyhagép-tisztítás, mosogatás — apró extrák, amik igazán sokat számítanak.</p>
+      </div>
+      <div class="service-item">
+        <h3>Otthoni vegytisztítás</h3>
+        <p>Kárpitozott bútorok, matracok és szőnyegek mélytisztítása szakértő géppel és vegyszerekkel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MIÉRT BÍZHAT BENNÜNK ===================== -->
+<section class="why-trust">
+  <div class="container">
+    <h2>Miért bízhat bennünk?</h2>
+    <div class="trust-points">
+      <div class="trust-point"><span class="trust-num">01</span><p>Gondos szakember-kiválasztás, interjú és képzés minden takarító számára.</p></div>
+      <div class="trust-point"><span class="trust-num">02</span><p>A minőség folyamatos ellenőrzése ügyfél-visszajelzések alapján.</p></div>
+      <div class="trust-point"><span class="trust-num">03</span><p>Kizárólag professzionális, német minőségű vegyszerek használata.</p></div>
+      <div class="trust-point"><span class="trust-num">04</span><p>Átlátható árazás, rejtett költségek nélkül.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ADDITIONAL COSTS ===================== -->
+<section class="additional-costs">
+  <div class="container">
+    <h2>Az alapárba nem beletartozó szolgáltatások</h2>
+    <div class="addon-cards">
+      <a href="#seo-content" class="addon-card">Ablaktisztítás</a>
+      <a href="#seo-content" class="addon-card">Vasalás</a>
+      <a href="#seo-content" class="addon-card">Hűtő tisztítása</a>
+      <a href="#seo-content" class="addon-card">És egyéb…</a>
+    </div>
+    <button type="button" class="cta-btn">Kalkulátor megnyitása</button>
+  </div>
+</section>
+
+<!-- ===================== SAFETY ===================== -->
+<section class="safety">
+  <div class="container">
+    <h2>Hogyan gondoskodunk a biztonságról?</h2>
+    <p>Minden munkatársunkat személyes interjú és gyakorlati próbaidő előz meg, referenciáikat pedig leellenőrizzük, mielőtt önállóan dolgozhatnának. Emellett minden takarítást felelősségbiztosítás fedez, így az Ön otthona és értéktárgyai biztonságban vannak nálunk.</p>
+  </div>
+</section>
+
+<!-- ===================== LOCATION ===================== -->
+<section class="location" id="hol-talalhatok">
+  <div class="container location-inner">
+    <div>
+      <h2>Hol találhatók minket?</h2>
+      <p>Irodánk címe: Budapest, Váci út 42.</p>
+      <p>Takarítóink Budapest teljes területén és a fővárosi agglomerációban is vállalnak munkát.</p>
+      <p><a href="tel:+36301234567" class="phone-number">+36 30 123 4567</a></p>
+    </div>
+    <div class="location-rating">
+      <span class="stars">★★★★★</span>
+      <strong>4,98 / 5</strong>
+      <span>Összesen 32 796 szavazat</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="logo">kitakarítunk<span class="dot">.</span></a>
+      <p>Budapest legjobban értékelt takarítási cége.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Rólunk</h4>
+      <a href="#arak">Árak</a>
+      <a href="#szolgaltatasaink">Szolgáltatások</a>
+      <a href="#gyik">Kérdések</a>
+      <a href="#">Munka</a>
+    </div>
+    <div class="footer-col">
+      <h4>Szolgáltatásaink</h4>
+      <a href="#hogyan-takaritunk">Felújítás utáni takarítás</a>
+      <a href="#seo-content">Nagytakarítás</a>
+      <a href="#arak">Fenntartó takarítás</a>
+      <a href="#seo-content">Vegytisztítás</a>
+      <a href="#seo-content">Ablaktisztítás</a>
+    </div>
+    <div class="footer-col">
+      <h4>Kapcsolat</h4>
+      <p>Messenger: kitakaritunk.hu</p>
+      <p>+36 30 123 4567</p>
+      <p>info@kitakaritunk.hu</p>
+      <p>Budapest, Váci út 42.</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© kitakarítunk., 2026</span>
+    <a href="#">Jogi dokumentumok</a>
+    <a href="https://varbro.pro" target="_blank" rel="noopener">Made by VarBro</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
