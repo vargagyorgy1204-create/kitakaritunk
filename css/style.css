@@ -197,7 +197,6 @@ h2 {
 .header-row--nav {
   padding-top: 12px;
   padding-bottom: 12px;
-  border-top: 1px solid var(--border);
 }
 .logo {
   font-size: 20px;
