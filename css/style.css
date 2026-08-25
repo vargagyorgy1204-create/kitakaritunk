@@ -180,6 +180,12 @@ h2 {
 }
 .pill-btn.active { background: var(--accent); color: #fff; }
 
+/* Header Otthon/Iroda toggle only (desktop row + mobile menu variant) */
+.header-row--top .toggle-pill .pill-btn.active,
+.mobile-pill .pill-btn.active {
+  background: #3871C1;
+}
+
 /* ===================== HEADER ===================== */
 .site-header {
   position: sticky;
