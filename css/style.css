@@ -185,6 +185,9 @@ h2 {
 .mobile-pill .pill-btn.active {
   background: #3871C1;
 }
+.pricing-toggle .pill-btn.active {
+  background: #3871C1;
+}
 
 /* ===================== HEADER ===================== */
 .site-header {
@@ -469,9 +472,9 @@ h2 {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border: none;
+  border: 3px solid #fff;
   background: #A9D9DF;
-  color: #fff;
+  color: #3871C1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -557,7 +560,7 @@ h2 {
   transition: background 0.2s ease, color 0.2s ease;
 }
 .room-tab:hover { color: var(--text); }
-.room-tab.active { background: var(--accent); color: #fff; }
+.room-tab.active { background: #3871C1; color: #fff; }
 
 .room-photo-wrap { max-width: 980px; }
 .room-photo {
@@ -644,7 +647,7 @@ h2 {
 }
 
 /* ===================== PRICING ===================== */
-.pricing { background: #FBFAFF; }
+.pricing { background: #FBFAFF; padding-bottom: 32px; }
 .pricing h2 { text-align: center; }
 .pricing-toggle {
   display: flex;
@@ -713,7 +716,8 @@ h2 {
 .discount-link { display: block; text-align: center; margin: 40px auto 0; }
 
 /* ===================== QUALITY ===================== */
-.quality { padding: 64px 0 96px; overflow: hidden; }
+.quality { padding: 32px 0 96px; overflow: hidden; }
+.quality .hero-inner { grid-template-columns: 1fr 1fr; }
 .quality .hero-text p { margin-bottom: 32px; }
 
 /* Circular-arrow + uppercase label link (quality section, reused elsewhere) */
@@ -752,9 +756,10 @@ h2 {
 .icon-link:focus-visible .icon-link-label { text-decoration: underline; }
 
 /* ===================== TEAM ===================== */
+.team { padding-top: 0; }
 .team-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 56px;
   align-items: center;
 }
@@ -768,7 +773,7 @@ h2 {
 }
 .team-tile {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   border-radius: var(--radius-card);
   overflow: hidden;
   border: none;
@@ -839,7 +844,7 @@ h2 {
   height: 32px;
   border-radius: 50%;
   background: #fff;
-  color: var(--accent-tint);
+  color: #3871C1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -861,16 +866,38 @@ h2 {
 }
 
 /* ===================== STATS STRIP ===================== */
-.stats-strip { background: var(--accent); color: #fff; padding: 48px 0; }
+.stats-strip {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #3871C1;
+  color: #fff;
+  padding: 48px 0;
+}
+.stats-shader {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 .stats-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
 }
-.stat-counter { display: flex; flex-direction: column; }
-.counter { font-size: 56px; font-weight: 600; line-height: 1; }
+.stat-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.counter { font-size: 96px; font-weight: 400; line-height: 1; }
 .stat-label { font-size: 15px; opacity: 0.85; margin-top: 8px; }
 
 /* Auto-rotating testimonial carousel — fixed height so slides of
@@ -1107,6 +1134,7 @@ h2 {
   h2 { font-size: 30px; }
   .hero { padding: 0 0 64px; }
   .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .quality .hero-inner { grid-template-columns: 1fr; }
   .hero-text-wrap { padding: 0 20px; }
   .hero-text h1 { font-size: 40px; }
   .hero-image img { min-height: 320px; max-height: 420px; border-radius: 0 0 24px 24px; }
