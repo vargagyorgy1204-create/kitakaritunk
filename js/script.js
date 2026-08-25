@@ -18,6 +18,17 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+    /* ---------- Location contact buttons ---------- */
+    document.querySelectorAll('.location-action').forEach(function (action) {
+      action.addEventListener('click', function () {
+        document.querySelectorAll('.location-action').forEach(function (currentAction) {
+          var isActive = currentAction === action;
+          currentAction.classList.toggle('active', isActive);
+          currentAction.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+      });
+    });
+
 
   /* ---------- Side panel (slide-in menu, desktop hamburger) ---------- */
   var hamburgerToggle = document.querySelector('.hamburger-toggle');
@@ -243,6 +254,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* ---------- FAQ category tabs ---------- */
+  var faqTabs = document.querySelectorAll('.faq-tab');
+  var faqItems = document.querySelectorAll('.accordion-item');
+  function showFaqCategory(category) {
+    faqItems.forEach(function (item) {
+      var isVisible = item.getAttribute('data-faq-category') === category;
+      item.hidden = !isVisible;
+      if (!isVisible) {
+        item.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+        item.querySelector('.accordion-panel').style.maxHeight = null;
+        item.querySelector('.accordion-panel').classList.remove('is-open');
+      }
+    });
+  }
+  if (faqTabs.length && faqItems.length) {
+    showFaqCategory('cleaning');
+    faqTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var category = tab.getAttribute('data-faq-category');
+        faqTabs.forEach(function (currentTab) {
+          var isActive = currentTab === tab;
+          currentTab.classList.toggle('active', isActive);
+          currentTab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        showFaqCategory(category);
+      });
+    });
+  }
+
   /* ---------- FAQ accordion ---------- */
   document.querySelectorAll('.accordion-trigger').forEach(function (trigger) {
     var panel = trigger.nextElementSibling;
@@ -278,81 +318,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (toggle) toggle.textContent = !isOpen ? '×' : '+';
     });
   });
-
-  /* ---------- WebGL waves background (stats strip) ---------- */
-  var shaderCanvas = document.querySelector('.stats-shader');
-  if (shaderCanvas) {
-    var gl = shaderCanvas.getContext('webgl', { antialias: false, alpha: false });
-    var vertexSource = 'attribute vec2 position; void main() { gl_Position = vec4(position, 0.0, 1.0); }';
-    var fragmentSource = [
-      'precision mediump float;',
-      'uniform vec2 resolution;',
-      'uniform float time;',
-      'uniform vec3 colors[5];',
-      'float hash(vec2 p) { p = fract(p * vec2(234.34, 435.345)); p += dot(p, p + 34.23); return fract(p.x * p.y); }',
-      'float noise(vec2 p) { vec2 i = floor(p), f = fract(p); f = f*f*(3.0-2.0*f); return mix(mix(hash(i), hash(i+vec2(1.0,0.0)), f.x), mix(hash(i+vec2(0.0,1.0)), hash(i+vec2(1.0,1.0)), f.x), f.y); }',
-      'float fbm(vec2 p) { float v=0.0, a=0.5; for(int i=0;i<5;i++){ v += a*noise(p); p=p*2.03+vec2(17.0,9.2); a*=0.5; } return v; }',
-      'vec3 palette(float x) { x=clamp(x,0.0,1.0)*4.0; vec3 c=colors[0]; for(int i=0;i<4;i++) c=mix(c,colors[i+1],smoothstep(0.0,1.0,clamp(x-float(i),0.0,1.0))); return c; }',
-      'void main() { vec2 uv=gl_FragCoord.xy/resolution; float wave=uv.y+sin(uv.x*5.8+time*0.22)*0.08+(fbm(uv*3.0+time*0.05)-0.5)*0.21; vec3 col=palette(wave); col=(col-0.5)*0.55+0.5; col += (hash(gl_FragCoord.xy+time)-0.5)*0.025; gl_FragColor=vec4(clamp(col,0.0,1.0),1.0); }'
-    ].join('\n');
-    function createShader(type, source) {
-      var shader = gl.createShader(type);
-      gl.shaderSource(shader, source);
-      gl.compileShader(shader);
-      return gl.getShaderParameter(shader, gl.COMPILE_STATUS) ? shader : null;
-    }
-    var vertexShader = gl && createShader(gl.VERTEX_SHADER, vertexSource);
-    var fragmentShader = gl && createShader(gl.FRAGMENT_SHADER, fragmentSource);
-    var shaderProgram = vertexShader && fragmentShader ? gl.createProgram() : null;
-    if (shaderProgram) {
-      gl.attachShader(shaderProgram, vertexShader);
-      gl.attachShader(shaderProgram, fragmentShader);
-      gl.linkProgram(shaderProgram);
-    }
-    if (gl && shaderProgram && gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
-      var buffer = gl.createBuffer();
-      gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
-      var position = gl.getAttribLocation(shaderProgram, 'position');
-      var resolution = gl.getUniformLocation(shaderProgram, 'resolution');
-      var time = gl.getUniformLocation(shaderProgram, 'time');
-      var colors = gl.getUniformLocation(shaderProgram, 'colors');
-      var palette = new Float32Array([
-        0.024,0.522,0.557, 0.118,0.620,0.651, 0.216,0.714,0.745,
-        0.365,0.780,0.808, 0.541,0.847,0.867
-      ]);
-      var startTime = performance.now();
-      function resizeShader() {
-        var ratio = Math.min(window.devicePixelRatio || 1, 2);
-        var width = Math.max(1, Math.floor(shaderCanvas.clientWidth * ratio));
-        var height = Math.max(1, Math.floor(shaderCanvas.clientHeight * ratio));
-        if (shaderCanvas.width !== width || shaderCanvas.height !== height) {
-          shaderCanvas.width = width;
-          shaderCanvas.height = height;
-          gl.viewport(0, 0, width, height);
-        }
-      }
-      function renderShader(now) {
-        resizeShader();
-        gl.useProgram(shaderProgram);
-        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-        gl.enableVertexAttribArray(position);
-        gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
-        gl.uniform2f(resolution, shaderCanvas.width, shaderCanvas.height);
-        gl.uniform1f(time, (now - startTime) * 0.001 * 0.57);
-        gl.uniform3fv(colors, palette);
-        gl.drawArrays(gl.TRIANGLES, 0, 3);
-        if (!document.hidden) requestAnimationFrame(renderShader);
-      }
-      document.addEventListener('visibilitychange', function () {
-        if (!document.hidden) {
-          startTime = performance.now();
-          requestAnimationFrame(renderShader);
-        }
-      });
-      requestAnimationFrame(renderShader);
-    }
-  }
 
   /* ---------- Animated stat counter ---------- */
   var counterEl = document.querySelector('.counter');

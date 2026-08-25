@@ -174,12 +174,11 @@
         <p class="duration">~3 óra</p>
         <button type="button" class="cta-btn cta-outline">Rendelem</button>
       </article>
-      <article class="price-card featured" data-reveal="rise">
-        <span class="price-badge" data-reveal="pop">Legnépszerűbb</span>
+      <article class="price-card" data-reveal="rise">
         <h3>3 szobás</h3>
         <p class="price" data-onetime="26 000 Ft" data-subscription="22 000 Ft">26 000 Ft</p>
         <p class="duration">~5 óra</p>
-        <button type="button" class="cta-btn">Rendelem</button>
+        <button type="button" class="cta-btn cta-outline">Rendelem</button>
       </article>
       <article class="price-card" data-reveal="rise">
         <h3>4 szobás</h3>
@@ -272,7 +271,6 @@
 
 <!-- ===================== STATS STRIP ===================== -->
 <section class="stats-strip">
-  <canvas class="stats-shader" aria-hidden="true"></canvas>
   <div class="container stats-inner">
     <div class="stat-counter" data-reveal="up">
       <span class="counter" data-target="1234">0</span>
@@ -337,7 +335,6 @@
         <p>„Az applikációban egy perc alatt lefoglaltam az időpontot, minden gördülékenyen ment.”</p>
       </article>
     </div>
-    <p class="reviews-note">Több vélemény</p>
   </div>
 </section>
 
@@ -363,48 +360,54 @@
 <section class="faq" id="gyik">
   <div class="container">
     <h2 data-reveal="curtain">Gyakori kérdések és válaszok</h2>
+    <div class="faq-tabs" role="tablist" aria-label="GYIK kategóriák">
+      <button type="button" class="faq-tab active" role="tab" aria-selected="true" data-faq-category="cleaning">Takarítás</button>
+      <button type="button" class="faq-tab" role="tab" aria-selected="false" data-faq-category="payment">Előfizetés és fizetés</button>
+      <button type="button" class="faq-tab" role="tab" aria-selected="false" data-faq-category="guarantee">Garancia és biztonság</button>
+      <button type="button" class="faq-tab" role="tab" aria-selected="false" data-faq-category="team">Szakemberek</button>
+    </div>
     <div class="accordion">
-      <div class="accordion-item" data-reveal="rise">
+      <div class="accordion-item" data-faq-category="cleaning" data-reveal="rise">
         <button class="accordion-trigger" aria-expanded="false">Rendelhető külön ablaktisztítás? <span class="accordion-icon">+</span></button>
         <div class="accordion-panel"><p>Igen, az ablaktisztítás önálló szolgáltatásként is megrendelhető, négyzetméter alapú árazással.</p></div>
       </div>
-      <div class="accordion-item" data-reveal="rise">
+      <div class="accordion-item" data-faq-category="cleaning" data-reveal="rise">
         <button class="accordion-trigger" aria-expanded="false">Mit NEM vállal egy takarító önállóan? <span class="accordion-icon">+</span></button>
         <div class="accordion-panel"><p>Egy takarító önállóan nem vállal nehéz bútormozgatást, magas állványzatot igénylő munkát, sem szakipari (pl. villanyszerelési) tevékenységet.</p></div>
       </div>
-      <div class="accordion-item" data-reveal="rise">
+      <div class="accordion-item" data-faq-category="payment" data-reveal="rise">
         <button class="accordion-trigger" aria-expanded="false">Mi az előfizetéses takarítás és hogyan működik? <span class="accordion-icon">+</span></button>
         <div class="accordion-panel"><p>Az előfizetéses takarítás rendszeres, előre ütemezett takarítást jelent (pl. heti vagy kétheti gyakorisággal), kedvezményes áron az egyszeri takarításhoz képest.</p></div>
       </div>
-      <div class="accordion-item" data-reveal="rise">
+      <div class="accordion-item" data-faq-category="team" data-reveal="rise">
         <button class="accordion-trigger" aria-expanded="false">Hogyan válogatjuk a takarítókat? <span class="accordion-icon">+</span></button>
         <div class="accordion-panel"><p>Minden jelentkező személyes interjún és gyakorlati képzésen vesz részt, referenciáit ellenőrizzük, és csak ezután dolgozhat önállóan ügyfeleinknél.</p></div>
       </div>
-      <div class="accordion-item" data-reveal="rise">
+      <div class="accordion-item" data-faq-category="guarantee" data-reveal="rise">
         <button class="accordion-trigger" aria-expanded="false">Mi van, ha nem vagyok elégedett a takarítással? <span class="accordion-icon">+</span></button>
         <div class="accordion-panel"><p>Jelezze felénk 24 órán belül, és díjmentesen újra elvégezzük az érintett területek takarítását.</p></div>
       </div>
-      <div class="accordion-item" data-reveal="rise">
+      <div class="accordion-item" data-faq-category="guarantee" data-reveal="rise">
         <button class="accordion-trigger" aria-expanded="false">Mi van, ha valami eltűnik vagy megsérül? <span class="accordion-icon">+</span></button>
         <div class="accordion-panel"><p>Minden takarítást felelősségbiztosítás fedez, kár esetén gyors és korrekt kártérítési eljárást indítunk.</p></div>
       </div>
-      <div class="accordion-item" data-reveal="rise">
+      <div class="accordion-item" data-faq-category="payment" data-reveal="rise">
         <button class="accordion-trigger" aria-expanded="false">Hogyan történik a fizetés? <span class="accordion-icon">+</span></button>
         <div class="accordion-panel"><p>A fizetés a takarítás végén, az elvégzett munka ellenőrzése után történik, készpénzzel vagy bankkártyával.</p></div>
       </div>
-      <div class="accordion-item" data-reveal="rise">
+      <div class="accordion-item" data-faq-category="cleaning" data-reveal="rise">
         <button class="accordion-trigger" aria-expanded="false">Lemossák a mennyezetet is? <span class="accordion-icon">+</span></button>
         <div class="accordion-panel"><p>Az alap takarítás nem tartalmazza a mennyezet lemosását, ez a nagytakarítás és felújítás utáni takarítás része lehet.</p></div>
       </div>
-      <div class="accordion-item" data-reveal="rise">
+      <div class="accordion-item" data-faq-category="cleaning" data-reveal="rise">
         <button class="accordion-trigger" aria-expanded="false">Miért nem része az alap takarításnak az ablak, erkély, hűtő belseje, mikró belseje? <span class="accordion-icon">+</span></button>
         <div class="accordion-panel"><p>Ezek a feladatok jelentősen több időt és speciális eszközöket igényelnek, ezért külön, kiegészítő szolgáltatásként rendelhetők meg.</p></div>
       </div>
-      <div class="accordion-item" data-reveal="rise">
+      <div class="accordion-item" data-faq-category="cleaning" data-reveal="rise">
         <button class="accordion-trigger" aria-expanded="false">Vállalnak bútor-vegytisztítást? <span class="accordion-icon">+</span></button>
         <div class="accordion-panel"><p>Igen, kárpitozott bútorok és szőnyegek vegytisztítását is vállaljuk, kültöni időpont-egyeztetés alapján.</p></div>
       </div>
-      <div class="accordion-item" data-reveal="rise">
+      <div class="accordion-item" data-faq-category="cleaning" data-reveal="rise">
         <button class="accordion-trigger" aria-expanded="false">Vállalnak felújítás utáni takarítást? <span class="accordion-icon">+</span></button>
         <div class="accordion-panel"><p>Igen, a felújítás utáni takarítás egyik fő szolgáltatásunk — a por- és törmelékmentesítéstől az ablaktisztításig mindent elvégzünk.</p></div>
       </div>
@@ -415,11 +418,12 @@
 <!-- ===================== EXTENDED SEO / PRICING CONTENT ===================== -->
 <section class="seo-content" id="seo-content">
   <div class="container">
-    <h2 data-reveal="curtain">kitakarítunk kft. — takarítási vállalkozás Budapesten</h2>
-    <p data-reveal="up" data-delay="100">A kitakarítunk kft. egy modern háztartási takarítási szolgáltatás, amely leveszi a válláról a takarítás terhét, hogy több ideje maradjon a fontos dolgokra. Alaposan ellenőrzött, képzett szakembereink prémium, környezetbarát vegyszerekkel dolgoznak Budapest és környéke otthonaiban és irodáiban.</p>
-    <p data-reveal="up" data-delay="180">Legyen szó heti fenntartó takarításról, egyszeri nagytakarításról vagy felújítás utáni portalanításról, csapatunk átlátható árazással és garantált minőséggel áll rendelkezésére — akár még aznap.</p>
+    <div class="seo-card">
+      <h2 data-reveal="curtain">kitakarítunk kft. — takarítási vállalkozás Budapesten</h2>
+      <p data-reveal="up" data-delay="100">A kitakarítunk kft. egy modern háztartási takarítási szolgáltatás, amely leveszi a válláról a takarítás terhét, hogy több ideje maradjon a fontos dolgokra. Alaposan ellenőrzött, képzett szakembereink prémium, környezetbarát vegyszerekkel dolgoznak Budapest és környéke otthonaiban és irodáiban.</p>
+      <p data-reveal="up" data-delay="180">Legyen szó heti fenntartó takarításról, egyszeri nagytakarításról vagy felújítás utáni portalanításról, csapatunk átlátható árazással és garantált minőséggel áll rendelkezésére — akár még aznap.</p>
 
-    <div class="price-tables">
+      <div class="price-tables">
       <div class="price-table" data-reveal="rise">
         <h3>Alap lakás- és háztakarítás árai</h3>
         <table>
@@ -474,6 +478,7 @@
           <tr><td>Erkély</td><td>3400 Ft</td></tr>
           <tr><td>Háziállat alom</td><td>3300 Ft</td></tr>
         </table>
+      </div>
       </div>
     </div>
   </div>
@@ -532,10 +537,13 @@
 <section class="location" id="hol-talalhatok">
   <div class="location-split">
     <div class="location-text">
-      <h2 data-reveal="curtain">Hol találhatók minket?</h2>
+      <h2 data-reveal="curtain">Hol találtok meg minkek?</h2>
       <p>Irodánk címe: Budapest, Váci út 42.</p>
       <p>Takarítóink Budapest teljes területén és a fővárosi agglomerációban is vállalnak munkát.</p>
-      <p><a href="tel:+36301234567" class="phone-number">+36 30 123 4567</a></p>
+      <div class="location-actions" aria-label="Kapcsolat">
+        <a href="mailto:info@kitakaritunk.hu" class="location-action active" aria-pressed="true">Üzenet</a>
+        <a href="mailto:info@kitakaritunk.hu" class="location-action" aria-pressed="false">Email</a>
+      </div>
     </div>
     <div class="location-map">
       <iframe
@@ -561,6 +569,7 @@
         <a href="https://instagram.com/kitakaritunk" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
         <a href="https://wa.me/36301234567" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
       </div>
+      <span class="footer-copyright">© kitakarítunk kft., 2026</span>
     </div>
     <div class="footer-col">
       <h4>Rólunk</h4>
@@ -575,7 +584,6 @@
       <a href="#seo-content">Nagytakarítás</a>
       <a href="#arak">Fenntartó takarítás</a>
       <a href="#seo-content">Vegytisztítás</a>
-      <a href="#seo-content">Ablaktisztítás</a>
     </div>
     <div class="footer-col">
       <h4>Kapcsolat</h4>
@@ -586,8 +594,6 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© kitakarítunk kft., 2026</span>
-    <span>Jogi dokumentumok</span>
     <a href="https://varbro.pro" target="_blank" rel="noopener">Made by VarBro</a>
   </div>
 </footer>

@@ -651,10 +651,12 @@ h2 {
 .pricing h2 { text-align: center; }
 .pricing-toggle {
   display: flex;
-  justify-content: center;
+  width: max-content;
+  background: #F4F2FB;
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  gap: 2px;
   margin: 0 auto 48px;
-  background: transparent;
-  padding: 0;
   border: none;
   box-shadow: none;
 }
@@ -704,13 +706,16 @@ h2 {
    into one higher-specificity rule per reveal state so centering always wins. */
 .price-badge[data-reveal="pop"] { transform: translateX(-50%) scale(0.9); }
 .price-badge[data-reveal="pop"].is-visible { transform: translateX(-50%) scale(1); }
-.price-card h3 { font-size: 17px; margin-bottom: 16px; font-weight: 500; }
-.price-card .price { font-size: 32px; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
-.price-card .duration { color: var(--text-light); font-size: 14px; margin-bottom: 24px; }
+.price-card h3 { font-size: 17px; margin-bottom: 16px; font-weight: 500; color: var(--text); }
+.price-card .price { font-size: 32px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.price-card .duration { color: var(--text); font-size: 14px; margin-bottom: 24px; }
 .price-card .cta-btn {
   width: min(100%, 220px);
   display: block;
   margin: 0 auto;
+  background: #3871c1;
+  color: #fff;
+  border-color: #3871c1;
 }
 
 .discount-link { display: block; text-align: center; margin: 40px auto 0; }
@@ -867,24 +872,11 @@ h2 {
 
 /* ===================== STATS STRIP ===================== */
 .stats-strip {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background: #3871C1;
+  background: #5ce1e6;
   color: #fff;
   padding: 48px 0;
 }
-.stats-shader {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
 .stats-inner {
-  position: relative;
-  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -928,6 +920,7 @@ h2 {
 .stats-strip .stars { color: #fff; }
 
 /* ===================== REVIEWS ===================== */
+.reviews { padding-bottom: 0; }
 .reviews h2 { text-align: center; margin-bottom: 8px; }
 .reviews .section-subtitle { text-align: center; }
 .reviews-grid {
@@ -955,10 +948,10 @@ h2 {
 .reviews-note { text-align: center; color: var(--text-light); font-size: 15px; }
 
 /* ===================== PROTECTION ===================== */
-.protection { background: #FBFAFF; }
+.protection { background: #FBFAFF; padding-top: 0; }
 .protection-inner {
   display: grid;
-  grid-template-columns: 1.05fr 1.35fr;
+  grid-template-columns: 5fr 6fr;
   gap: 40px;
   align-items: stretch;
 }
@@ -987,13 +980,42 @@ h2 {
 .protection-images img {
   width: 100%;
   height: 100%;
-  border-radius: var(--radius-card);
+  border-radius: 0;
   object-fit: cover;
   display: block;
 }
 
 /* ===================== FAQ / ACCORDION ===================== */
+.faq { padding-top: 0; }
 .faq h2 { text-align: center; margin-bottom: 48px; }
+.faq-tabs {
+  display: inline-flex;
+  background: #F4F2FB;
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  gap: 2px;
+  flex-wrap: wrap;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto 32px;
+}
+.faq-tab {
+  border: none;
+  background: #fff;
+  color: var(--text-light);
+  border-radius: var(--radius-pill);
+  padding: 10px 22px;
+  font-family: var(--font);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.faq-tab.active,
+.faq-tab:focus-visible {
+  background: #3871C1;
+  color: #fff;
+}
 .accordion { max-width: 820px; margin: 0 auto; }
 .accordion-item { border-bottom: 1px solid var(--border); }
 .accordion-trigger {
@@ -1011,7 +1033,7 @@ h2 {
   align-items: center;
   gap: 16px;
 }
-.accordion-icon { color: var(--accent-warm); font-size: 20px; flex-shrink: 0; transition: transform 0.2s; }
+.accordion-icon { color: #3871C1; font-size: 20px; flex-shrink: 0; transition: transform 0.2s; }
 .accordion-trigger[aria-expanded="true"] .accordion-icon { transform: rotate(45deg); }
 .accordion-panel {
   max-height: 0;
@@ -1023,8 +1045,17 @@ h2 {
 .accordion-panel p { padding-bottom: 22px; color: var(--text-light); font-size: 15px; max-width: 700px; }
 
 /* ===================== SEO CONTENT / PRICE TABLES ===================== */
-.seo-content { background: #FBFAFF; }
-.seo-content p { color: var(--text-light); font-size: 16px; margin-bottom: 16px; max-width: 820px; }
+.seo-content { background: #fff; padding-top: 0; }
+.seo-card {
+  background: #5ce1e6;
+  border-radius: 20px;
+  padding: 48px;
+}
+.seo-card h2,
+.seo-card p {
+  color: #fff;
+}
+.seo-card p { font-size: 16px; margin-bottom: 16px; max-width: 820px; }
 .price-tables {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1049,17 +1080,25 @@ h2 {
 .price-table td:last-child, .price-table th:last-child { text-align: right; color: var(--accent); font-weight: 500; }
 
 /* ===================== SERVICE TYPES ===================== */
+.service-types { padding-top: 0; }
 .service-types h2 { text-align: center; margin-bottom: 48px; }
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px 28px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.service-item {
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-rest);
 }
 .service-item h3 { font-size: 17px; margin-bottom: 10px; }
 .service-item p { color: var(--text-light); font-size: 14.5px; }
 
 /* ===================== SAFETY ===================== */
-.safety { max-width: 900px; margin: 0 auto; text-align: center; }
+.safety { width: 100%; margin: 0; text-align: center; background: #5ce1e6; }
 .safety p { color: var(--text-light); font-size: 17px; margin-top: 16px; }
 
 /* ===================== LOCATION ===================== */
@@ -1078,6 +1117,29 @@ h2 {
 }
 .location-text p { color: var(--text-light); margin: 10px 0; }
 .location-text .phone-number { color: var(--accent); font-weight: 500; }
+.location-actions {
+  display: inline-flex;
+  align-self: flex-start;
+  background: #F4F2FB;
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  gap: 2px;
+  margin-top: 18px;
+}
+.location-action {
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  background: #fff;
+  color: var(--text-light);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.location-action.active,
+.location-action:focus-visible {
+  background: #3871C1;
+  color: #fff;
+}
 .location-map { background: #F1EBEB; }
 .location-map iframe { display: block; }
 
@@ -1099,12 +1161,18 @@ h2 {
   display: flex; align-items: center; justify-content: center;
   font-size: 11px; font-weight: 600;
 }
+.footer-copyright {
+  display: block;
+  margin-top: 18px;
+  color: var(--text-light);
+  font-size: 13.5px;
+}
 .footer-col h4 { font-size: 14px; margin-bottom: 18px; color: var(--text-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
 .footer-col a, .footer-col p { display: block; font-size: 14.5px; margin-bottom: 12px; color: var(--text); }
 .footer-col a:hover { color: var(--accent); }
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
   padding-top: 28px;
@@ -1140,6 +1208,7 @@ h2 {
   .hero-image img { min-height: 320px; max-height: 420px; border-radius: 0 0 24px 24px; }
   .hero-badge { width: 100px; height: 100px; font-size: 11px; right: 16px; bottom: -24px; }
   .features-grid, .price-cards, .reviews-grid, .service-grid { grid-template-columns: 1fr; }
+  .service-item { min-height: 0; }
   .team-inner { grid-template-columns: 1fr; gap: 32px; }
   .team-badge.hero-badge { left: 16px; bottom: -20px; width: 90px; height: 90px; font-size: 11px; }
   .protection-inner { grid-template-columns: 1fr; }
