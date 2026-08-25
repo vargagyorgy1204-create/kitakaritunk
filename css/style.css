@@ -377,7 +377,7 @@ h2 {
 .hero { padding: 0 0 96px; overflow: hidden; }
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 0 48px;
   max-width: 1760px;
@@ -410,6 +410,11 @@ h2 {
   position: relative;
   align-self: stretch;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 540px;
+  grid-column: 1;
 }
 .hero-image img {
   width: 100%;
@@ -418,6 +423,7 @@ h2 {
   max-height: 760px;
   border-radius: 0;
   object-fit: cover;
+  object-position: center;
 }
 
 /* Rotated circular badge overlapping the photo's bottom-right corner */
@@ -458,14 +464,14 @@ h2 {
   height: 140px;
   border-radius: 50%;
   border: none;
-  background: var(--accent);
+  background: #A9D9DF;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   cursor: pointer;
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 8px 20px rgba(169,217,223,0.18);
   transform: rotate(-22deg) translateY(16px) scale(0.9);
   opacity: 0;
   pointer-events: none;
@@ -479,7 +485,7 @@ h2 {
 .fab-cta:hover,
 .fab-cta:focus-visible {
   transform: rotate(-22deg) translateY(0) scale(1.06);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+  box-shadow: 0 12px 28px rgba(169,217,223,0.28);
 }
 .fab-cta-text {
   font-size: 14px;
@@ -634,7 +640,15 @@ h2 {
 /* ===================== PRICING ===================== */
 .pricing { background: #FBFAFF; }
 .pricing h2 { text-align: center; }
-.pricing-toggle { display: flex; justify-content: center; margin: 0 auto 48px; }
+.pricing-toggle {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 48px;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
 .price-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -684,7 +698,11 @@ h2 {
 .price-card h3 { font-size: 17px; margin-bottom: 16px; font-weight: 500; }
 .price-card .price { font-size: 32px; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
 .price-card .duration { color: var(--text-light); font-size: 14px; margin-bottom: 24px; }
-.price-card .cta-btn { width: 100%; }
+.price-card .cta-btn {
+  width: min(100%, 220px);
+  display: block;
+  margin: 0 auto;
+}
 
 .discount-link { display: block; text-align: center; margin: 40px auto 0; }
 
@@ -907,9 +925,16 @@ h2 {
 .protection { background: #FBFAFF; }
 .protection-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
+  grid-template-columns: 1.05fr 1.35fr;
+  gap: 40px;
   align-items: center;
+  min-height: 420px;
+}
+.protection-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 .checklist { margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
 .checklist li {
@@ -923,8 +948,23 @@ h2 {
   position: absolute;
   left: 0;
 }
-.protection-images { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.protection-images img { border-radius: var(--radius-card); aspect-ratio: 3/4; object-fit: cover; }
+.protection-images {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+.protection-images img {
+  width: min(100%, 760px);
+  height: 100%;
+  min-height: 420px;
+  max-height: 480px;
+  border-radius: var(--radius-card);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
 
 /* ===================== FAQ / ACCORDION ===================== */
 .faq h2 { text-align: center; margin-bottom: 48px; }
