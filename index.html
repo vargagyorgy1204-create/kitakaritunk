@@ -17,7 +17,7 @@
 <header class="site-header" id="top">
   <div class="container header-row header-row--top">
     <a href="#top" class="logo">
-      <svg class="logo-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C12 7 13 10 14 11C15 12 18 13 22 13C18 13 15 14 14 15C13 16 12 19 12 22C12 19 11 16 10 15C9 14 6 13 2 13C6 13 9 12 10 11C11 10 12 7 12 2Z" fill="currentColor"/></svg>
+      <img class="logo-icon" src="images/logokitakaritunk.png" alt="" aria-hidden="true">
       kitakarítunk kft<span class="dot">.</span>
     </a>
 
@@ -555,17 +555,19 @@
 
 <!-- ===================== LOCATION ===================== -->
 <section class="location" id="hol-talalhatok">
-  <div class="container location-inner">
-    <div>
+  <div class="location-split">
+    <div class="location-text">
       <h2 data-reveal="curtain">Hol találhatók minket?</h2>
       <p>Irodánk címe: Budapest, Váci út 42.</p>
       <p>Takarítóink Budapest teljes területén és a fővárosi agglomerációban is vállalnak munkát.</p>
       <p><a href="tel:+36301234567" class="phone-number">+36 30 123 4567</a></p>
     </div>
-    <div class="location-rating" data-reveal="rise">
-      <span class="stars">★★★★★</span>
-      <strong>4,98 / 5</strong>
-      <span>Összesen 32 796 szavazat</span>
+    <div class="location-map">
+      <iframe
+        src="https://www.google.com/maps?q=Budapest,+V%C3%A1ci+%C3%BAt+42&output=embed"
+        width="100%" height="100%" style="border:0;" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Irodánk helye a térképen"></iframe>
     </div>
   </div>
 </section>
@@ -574,7 +576,10 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a href="#top" class="logo">kitakarítunk kft<span class="dot">.</span></a>
+      <a href="#top" class="logo">
+        <img class="logo-icon" src="images/logokitakaritunk.png" alt="" aria-hidden="true">
+        kitakarítunk kft<span class="dot">.</span>
+      </a>
       <p>Budapest legjobban értékelt takarítási cége.</p>
       <div class="social-icons">
         <a href="https://facebook.com/kitakaritunk" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>

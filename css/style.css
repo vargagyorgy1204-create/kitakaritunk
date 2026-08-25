@@ -216,9 +216,9 @@ h2 {
 }
 .logo .dot { color: var(--accent-tint); }
 .logo-icon {
-  width: 22px;
-  height: 22px;
-  color: var(--accent-tint);
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
@@ -1030,25 +1030,23 @@ h2 {
 .safety p { color: var(--text-light); font-size: 17px; margin-top: 16px; }
 
 /* ===================== LOCATION ===================== */
-.location { background: #FBFAFF; }
-.location-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
+.location { padding: 0; }
+.location-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
 }
-.location-inner p { color: var(--text-light); margin: 10px 0; }
-.location-inner .phone-number { color: var(--accent); font-weight: 500; }
-.location-rating {
+.location-text {
   background: #fff;
-  border-radius: var(--radius-card);
-  padding: 28px 36px;
-  text-align: center;
-  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px min(8vw, 120px);
 }
-.location-rating strong { display: block; font-size: 28px; margin: 8px 0 4px; }
-.location-rating span { color: var(--text-light); font-size: 13px; }
+.location-text p { color: var(--text-light); margin: 10px 0; }
+.location-text .phone-number { color: var(--accent); font-weight: 500; }
+.location-map { background: #F1EBEB; }
+.location-map iframe { display: block; }
 
 /* ===================== FOOTER ===================== */
 .site-footer { padding: 72px 0 32px; border-top: 1px solid var(--border); }
@@ -1113,7 +1111,9 @@ h2 {
   .protection-inner { grid-template-columns: 1fr; }
   .protection-images { order: -1; min-height: 0; }
   .protection-images img { height: auto; aspect-ratio: 4 / 3; }
-  .location-inner { flex-direction: column; align-items: flex-start; }
+  .location-split { grid-template-columns: 1fr; }
+  .location-text { padding: 56px 32px; }
+  .location-map { min-height: 340px; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .stats-inner { flex-direction: column; align-items: flex-start; }
   .counter { font-size: 44px; }
